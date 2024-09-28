@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --bg-color-dark : #ff7c7c;
+    --bg-color-main : #bbffbb;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+ body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875rem;
+    opacity: 1;
+    overflow-y: scroll;
+} 
+.box-from{
+    background-color: rgb(255, 225, 234);
+    padding: 5em;
+    border-radius: 15px;
+    width: 50%;
+}
+.menubar{
+    display: flex;
+}
+#sidebar{
+    display: flex;
+    min-width: 90px;
+    max-width: 90px;
+    flex-direction: column;
+    z-index:1000;
+    background-color: var(--bg-color-dark);
+    transition: all 0.3s ease-in-out;
+}
+.mainpage{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--bg-color-main);
+    transition: all 0.3s ease-in-out;
+}
+
+/* sidebar hamburger */
+#sidebar.expand{
+    max-width: 250px;
+    min-width: 250px;
+
+}
+#toggle-btn{
+    background-color: transparent;
+    cursor: pointer;
+    border:none;
+    padding: 1.2rem;
+}
+#toggle-btn i{
+    font-size: 2rem;
+    color: burlywood;
+}
+.sidebar-logo{
+    margin:auto 0;
+}
+.sidebar-logo a{
+    color: rgb(17, 52, 81);
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span{
+    display: none;
+}
+.sidebar-nav{
+    list-style:none;
+    padding-left: 0;
+    flex: 1 1 auto;
+}
+a.sidebar-link{
+    padding: .5rem 1.5rem;
+    display: block;
+    position: relative;
+    font-size: 2rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    transition: all 0.5s ease-in-out;
+}
+a.sidebar-link:hover{
+    background-color: rgba(255,255,255,0.75);
+    border-left: 3px solid rgb(31, 31, 31);
+    
+}
+.sidebar-link i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: aliceblue;
+}
+.sidebar-item{
+    position: relative;
+}
+#sidebar:not(.expand) .sidebar-item{
+    position:absolute;
+    top:0;
+    left:90px;
+    background-color: var(--bg-color-main);
+    padding: 0;
+    min-width: 15em;
+    display: none;
+}
+#sidebar:not(.expand) .sidebar-item:hover {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
